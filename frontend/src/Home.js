@@ -17,14 +17,14 @@ const Home = () => {
                     
                     {activeTab === 'login' && (
                         <div>
-                            <h2>Login</h2>
-                            <Link to="/login">Go to Login</Link>
+                            <h2><Link to="/login">Login</Link></h2>
+                            
                         </div>
                     )}
                     {activeTab === 'register' && (
                         <div>
-                            <h2>Register</h2>
-                            <Link to="/register">Go to Register</Link>
+                            <h2><Link to="/register">Register</Link></h2>
+                            
                         </div>
                     )}
                 </div>

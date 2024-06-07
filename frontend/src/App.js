@@ -17,7 +17,7 @@
 //         localStorage.removeItem('username');
 //         window.location.href = '/login';
 //     };
-  
+
 
 //     return (
 //         <Router>
@@ -27,7 +27,7 @@
 //                         <button onClick={handleLogout}>Logout</button>
 //                     </div>
 //                     <p>{username}</p>
-                   
+
 //                     <div className="calendar">
 //                         <Calendar />
 //                     </div>
@@ -36,8 +36,8 @@
 //                     <nav className="navbar">
 //                         <ul>
 //                             <li><a href="/email">Send Email</a></li>
-                            
-                           
+
+
 //                         </ul>
 //                     </nav>
 //                     <div className="main-content">
@@ -67,11 +67,15 @@ import Home from './Home';
 import Email from './Email';
 import Calendar from 'react-calendar';
 import './App.css';
+import logo from './Logo.jpg';
+// import 'react-calendar/dist/Calendar.css';
+
+
 
 const App = () => {
     const isLoggedIn = !!localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    const email = localStorage.getItem('email');
+   
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -84,23 +88,24 @@ const App = () => {
         <Router>
             <div className="app-container">
                 <div className="sidebar">
-                    <div className="user-info">
-                        <button onClick={handleLogout}>Logout</button>
-                    </div>
-                    <p>Username: {username}</p>
-                    {/* <p>Username: {email}</p> */}
-                    <div className="calendar">
-                        <Calendar />
-                    </div>
-                </div>
-                <div className="content">
+                <div className='logo'><img src={logo} alt='Logo'></img></div>
                     <nav className="navbar">
                         <ul>
                             <li><a href="/email">Send Email</a></li>
-                            
-                           
+
+
+                         
                         </ul>
                     </nav>
+                </div>
+                <div className="content">
+                    {/* <nav className="navbar">
+                            <ul>
+                                <li><a href="/email">Send Email</a></li>
+                                
+                               
+                            </ul>
+                        </nav> */}
                     <div className="main-content">
                         <Routes>
                             <Route path="/" element={<Home />} />
@@ -108,6 +113,16 @@ const App = () => {
                             <Route path="/register" element={<Register />} />
                             <Route path="/email" element={isLoggedIn ? <Email /> : <Navigate to="/login" />} />
                         </Routes>
+                    </div>
+                </div>
+                <div className="sidebar">
+                    {/* <div className="user-info">
+                        <button onClick={handleLogout}>Logout</button>
+                    </div> */}
+                    <p>Username: {username}</p>
+
+                    <div className='calender'>
+                        <Calendar />
                     </div>
                 </div>
             </div>

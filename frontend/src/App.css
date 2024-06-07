@@ -5,6 +5,14 @@
   margin: 0;
   padding: 0;
 }
+.logo img{
+  height: 100px;
+    width: auto;
+    margin-bottom: 30px;
+    /* border: 10px black; */
+    border-radius: 10px;
+}
+
 
 .app-container {
   display: flex;
@@ -44,8 +52,8 @@
 }
 
 .calendar {
-  flex: 1;
-  margin-top: 20px;
+  /* flex: 1; */
+  margin-top: 320px;
 }
 
 .content {
@@ -59,6 +67,7 @@
   background-color: #34495e;
   padding: 10px;
   color: white;
+  border-radius: 10px;
 }
 
 .navbar ul {
@@ -71,11 +80,13 @@
 
 .navbar ul li {
   margin-right: 20px;
+ 
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
+ 
 }
 
 .main-content {

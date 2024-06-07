@@ -70,6 +70,12 @@ const Email = () => {
             alert('Error sending email. Please try again.');
         }
     };
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        localStorage.removeItem('username');
+        window.location.href = '/login';
+    };
 
     return (
         <div className="email-form-container">
@@ -142,6 +148,9 @@ const Email = () => {
             </div>
            
             <button onClick={handleSendEmail}>Send Email</button>
+            <div className="user-info">
+                        <button onClick={handleLogout}>Logout</button>
+                    </div>
         </div>
     );
 };
